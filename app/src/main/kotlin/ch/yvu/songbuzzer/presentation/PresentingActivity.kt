@@ -32,6 +32,16 @@ abstract class PresentingActivity : AppCompatActivity() {
         lifecycleRegistry.register(presenter)
     }
 
+    override fun onResume() {
+        super.onResume()
+        lifecycleRegistry.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        lifecycleRegistry.onPause()
+    }
+
     abstract fun inject(component: ApplicationComponent)
     abstract fun setupView()
     abstract fun registerPresenters()
