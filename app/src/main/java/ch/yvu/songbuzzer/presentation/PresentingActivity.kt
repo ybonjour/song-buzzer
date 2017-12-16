@@ -1,7 +1,9 @@
-package ch.yvu.songbuzzer
+package ch.yvu.songbuzzer.presentation
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import ch.yvu.songbuzzer.ApplicationComponent
+import ch.yvu.songbuzzer.SongBuzzerApplication
 import ch.yvu.songbuzzer.lifecycle.LifecycleRegistry
 
 abstract class PresentingActivity : AppCompatActivity() {

@@ -1,5 +1,6 @@
 package ch.yvu.songbuzzer
 
+import ch.yvu.songbuzzer.presentation.PresentingActivity
 import javax.inject.Inject
 
 class MainActivity : PresentingActivity(), MainView {
