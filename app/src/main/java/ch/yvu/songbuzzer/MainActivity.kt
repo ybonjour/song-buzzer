@@ -13,4 +13,8 @@ class MainActivity : PresentingActivity() {
     override fun setupView() {
         setContentView(R.layout.activity_main)
     }
+
+    override fun registerPresenters() {
+        registerPresenter(mainPresenter)
+    }
 }
