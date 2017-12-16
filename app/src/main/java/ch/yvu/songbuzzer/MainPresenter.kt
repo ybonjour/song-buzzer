@@ -6,6 +6,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class MainPresenter @Inject constructor() : Presenter<MainView>, LifecycleListener by NoOpLifecycleListener {
+class MainPresenter @Inject constructor() : PresenterWithLifecycle<MainView>, LifecycleListener by NoOpLifecycleListener {
     override lateinit var view: MainView
 }
