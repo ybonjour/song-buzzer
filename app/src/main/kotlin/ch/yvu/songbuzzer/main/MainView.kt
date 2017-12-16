@@ -1,3 +1,9 @@
 package ch.yvu.songbuzzer.main
 
-interface MainView
+import io.reactivex.Observable
+
+interface MainView {
+    fun songSearchChanges(): Observable<String>
+    fun showSong(song: String)
+    fun showErrorMessage(message: String)
+}
