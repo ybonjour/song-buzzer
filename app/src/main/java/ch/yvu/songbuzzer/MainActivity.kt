@@ -1,6 +1,5 @@
 package ch.yvu.songbuzzer
 
-import android.os.Bundle
 import javax.inject.Inject
 
 class MainActivity : PresentingActivity() {
@@ -11,8 +10,7 @@ class MainActivity : PresentingActivity() {
         component.inject(this)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun setupView() {
         setContentView(R.layout.activity_main)
     }
 }

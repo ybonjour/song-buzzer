@@ -8,7 +8,9 @@ abstract class PresentingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         inject(SongBuzzerApplication.applicationComponent)
+        setupView()
     }
 
     abstract fun inject(component: ApplicationComponent)
+    abstract fun setupView()
 }
