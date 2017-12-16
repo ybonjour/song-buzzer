@@ -10,11 +10,11 @@ class MainActivity : PresentingActivity(), MainView {
         component.inject(this)
     }
 
-    override fun setupView() {
-        setContentView(R.layout.activity_main)
-    }
-
     override fun registerPresenters() {
         registerPresenter(mainPresenter, this)
+    }
+
+    override fun setupView() {
+        setContentView(R.layout.activity_main)
     }
 }
