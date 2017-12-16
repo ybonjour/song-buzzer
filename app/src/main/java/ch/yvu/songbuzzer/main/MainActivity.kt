@@ -1,5 +1,7 @@
-package ch.yvu.songbuzzer
+package ch.yvu.songbuzzer.main
 
+import ch.yvu.songbuzzer.ApplicationComponent
+import ch.yvu.songbuzzer.R
 import ch.yvu.songbuzzer.presentation.PresentingActivity
 import javax.inject.Inject
 

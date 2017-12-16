@@ -1,4 +1,4 @@
-package ch.yvu.songbuzzer
+package ch.yvu.songbuzzer.main
 
 import ch.yvu.songbuzzer.lifecycle.LifecycleListener
 import ch.yvu.songbuzzer.lifecycle.NoOpLifecycleListener
