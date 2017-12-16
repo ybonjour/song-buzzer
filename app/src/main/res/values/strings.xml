@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">song-buzzer</string>
+    <string name="app_name">Song Buzzer</string>
+    <string name="search_song">Song auswählen</string>
 </resources>
