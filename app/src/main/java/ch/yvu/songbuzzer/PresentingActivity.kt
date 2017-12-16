@@ -2,7 +2,6 @@ package ch.yvu.songbuzzer
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import ch.yvu.songbuzzer.lifecycle.LifecycleListener
 import ch.yvu.songbuzzer.lifecycle.LifecycleRegistry
 
 abstract class PresentingActivity : AppCompatActivity() {
@@ -15,8 +14,9 @@ abstract class PresentingActivity : AppCompatActivity() {
         setupView()
     }
 
-    protected fun registerPresenter(lifecycleListener: LifecycleListener) {
-        lifecycleRegistry.register(lifecycleListener)
+    protected fun <ViewType> registerPresenter(presenter: PresenterWithLifecycle<ViewType>, view: ViewType) {
+        presenter.view = view
+        lifecycleRegistry.register(presenter)
     }
 
     abstract fun inject(component: ApplicationComponent)

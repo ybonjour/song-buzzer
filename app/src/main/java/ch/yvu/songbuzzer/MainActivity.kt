@@ -15,6 +15,6 @@ class MainActivity : PresentingActivity(), MainView {
     }
 
     override fun registerPresenters() {
-        registerPresenter(mainPresenter)
+        registerPresenter(mainPresenter, this)
     }
 }
