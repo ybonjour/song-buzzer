@@ -2,7 +2,7 @@ package ch.yvu.songbuzzer
 
 import javax.inject.Inject
 
-class MainActivity : PresentingActivity() {
+class MainActivity : PresentingActivity(), MainView {
     @Inject
     lateinit var mainPresenter: MainPresenter
 
