@@ -10,5 +10,6 @@ class SongBuzzerApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        applicationComponent = DaggerApplicationComponent.create()
     }
 }
