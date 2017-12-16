@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 
 abstract class PresentingActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    final override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         inject(SongBuzzerApplication.applicationComponent)
         setupView()
