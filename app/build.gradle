@@ -33,6 +33,11 @@ android {
                 srcDirs = ['src/test/kotlin']
             }
         }
+        androidTest {
+            java {
+                srcDirs = ['src/androidTest/kotlin']
+            }
+        }
     }
 }
 
