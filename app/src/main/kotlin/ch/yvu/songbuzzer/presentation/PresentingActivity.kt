@@ -14,6 +14,17 @@ abstract class PresentingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         inject(SongBuzzerApplication.applicationComponent)
         setupView()
+        registerPresenters()
+    }
+
+    final override fun onResume() {
+        super.onResume()
+        lifecycleRegistry.onResume()
+    }
+
+    final override fun onPause() {
+        super.onPause()
+        lifecycleRegistry.onPause()
     }
 
     protected fun <ViewType> registerPresenter(presenter: PresenterWithLifecycle<ViewType>, view: ViewType) {
