@@ -49,6 +49,7 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.13'
     implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'com.beust:klaxon:2.1.0'
 
     kapt 'com.google.dagger:dagger-compiler:2.13'
 

@@ -16,7 +16,7 @@ class HttpClientOkHttp(private val okHttp: OkHttpClient) : HttpClient {
         try {
             val response = call.execute()
             val body = response.body()?.string()
-            emitter.onSuccess(Response(response.code(), body))
+            emitter.onSuccess(Response(response.code(), body ?: ""))
         } catch (exception: IOException) {
             // Canceling the call leads to an Exception which we do not need to emit
             if (!call.isCanceled) {
