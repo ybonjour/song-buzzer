@@ -25,6 +25,16 @@ class LifecycleRegistryTest {
     }
 
     @Test
+    fun notifiesRegisteredListenerOnPause() {
+        val listener: LifecycleListener = mock()
+        lifecycleRegistry.register(listener)
+
+        lifecycleRegistry.onPause()
+
+        verify(listener).onPause()
+    }
+
+    @Test
     fun notifiesAllRegisteredListeners() {
         val listener1: LifecycleListener = mock()
         val listener2: LifecycleListener = mock()
