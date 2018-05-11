@@ -9,7 +9,7 @@ import okhttp3.Response
 class HttpClientOkHttp(
     private val httpClient: OkHttpClient
 ) : HttpClient {
-    override fun get(url: String) =
+    override fun get(url: String): Single<String> =
         Single.create<String> { emitter ->
             var call: Call? = null
             try {
