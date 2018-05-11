@@ -20,11 +20,6 @@ class HttpClientOkHttp(
                 }
 
                 val response = call.execute()
-
-                if (!response.isSuccessful) {
-                    throw HttpException(response)
-                }
-
                 emitter.onSuccess(extractBody(response))
             } catch (exception: Exception) {
                 val ignoreError = call != null && !call.isCanceled
@@ -35,7 +30,9 @@ class HttpClientOkHttp(
         }
 
     private fun extractBody(httpResponse: Response): String {
+        if (!httpResponse.isSuccessful) {
+            throw HttpException(httpResponse)
+        }
         httpResponse.use { response -> return response.body()?.string() ?: "" }
     }
-
 }
