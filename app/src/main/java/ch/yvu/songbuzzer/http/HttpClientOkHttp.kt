@@ -22,7 +22,7 @@ class HttpClientOkHttp(
                 val response = call.execute()
                 emitter.onSuccess(extractBody(response))
             } catch (exception: Exception) {
-                val ignoreError = call != null && !call.isCanceled
+                val ignoreError = call != null && call.isCanceled
                 if (!ignoreError) {
                     emitter.onError(exception)
                 }
@@ -33,6 +33,11 @@ class HttpClientOkHttp(
         if (!httpResponse.isSuccessful) {
             throw HttpException(httpResponse)
         }
-        httpResponse.use { response -> return response.body()?.string() ?: "" }
+
+        if(httpResponse.body() == null) {
+            return ""
+        }
+
+        return httpResponse.use { response -> response.body()?.string() ?: "" }
     }
 }
