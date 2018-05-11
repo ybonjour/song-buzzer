@@ -17,16 +17,6 @@ abstract class PresentingActivity : AppCompatActivity() {
         registerPresenters()
     }
 
-    final override fun onResume() {
-        super.onResume()
-        lifecycleRegistry.onResume()
-    }
-
-    final override fun onPause() {
-        super.onPause()
-        lifecycleRegistry.onPause()
-    }
-
     protected fun <ViewType> registerPresenter(presenter: PresenterWithLifecycle<ViewType>, view: ViewType) {
         presenter.view = view
         lifecycleRegistry.register(presenter)
